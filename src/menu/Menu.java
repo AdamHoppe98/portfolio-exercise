@@ -61,9 +61,12 @@ public class Menu {
             System.out.println(msg);
             String input = scanner.nextLine().trim().toUpperCase();
             // TODO: Tjek om input er valid og returner symbolet hvis det er
+            if (Symbol.isValidSymbol(input)){
             return Symbol.valueOf(input);
+            }
 
-//            System.out.println("Invalid stock symbol. Please try again.");
+            System.out.println("Invalid stock symbol. Please try again.");
+
         }
     }
 
@@ -76,7 +79,10 @@ public class Menu {
                 scanner.nextLine();
 
                 // TODO: Returner quantity, kun hvis positivt
+                if (quantity > 0){
                 return quantity;
+                }
+
             } else {
                 scanner.nextLine();
             }
